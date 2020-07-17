@@ -23,4 +23,4 @@ def create_custom_hn(links, subtext) :
         hn.append({'Title': title, 'link': href, 'points': point})
     return sorted_hn(hn)
 
-pprint.pprint(create_custom_hn(links,subtext))
+#pprint.pprint(create_custom_hn(links,subtext))
