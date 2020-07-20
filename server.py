@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect
 import csv
-from password_checker import *
+#from password_checker import *
 #from hackernews_project import *
 #from bs4 import BeautifulSoup
 app = Flask(__name__)
