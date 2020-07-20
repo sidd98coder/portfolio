@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect
 import csv
-#from password_checker import *
+from password_checker import *
 #from hackernews_project import *
 #from bs4 import BeautifulSoup
 app = Flask(__name__)
@@ -42,7 +42,7 @@ def submit_email():
 def password_checker_demo():
     if request.method =='POST' :
         data = request.form.to_dict()
-        #result = main1(list(data.values()))
+        result = main1(list(data.values()))
     else :
         print('OOPS ! SOMETHING WENT WRONG, Try Again !!!')
     return '''
