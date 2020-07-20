@@ -24,7 +24,7 @@ def pwned_api_check(password) :
 
 
 
-def main(args) :
+def main1(args) :
 
 ## taking the password from user to check the number of occurences whether its been used by another user
 # by cheking in the haveibeenpwned website.

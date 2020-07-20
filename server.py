@@ -42,7 +42,7 @@ def submit_email():
 def password_checker_demo():
     if request.method =='POST' :
         data = request.form.to_dict()
-        #result = main(list(data.values()))
+        #result = main1(list(data.values()))
     else :
         print('OOPS ! SOMETHING WENT WRONG, Try Again !!!')
     return '''
