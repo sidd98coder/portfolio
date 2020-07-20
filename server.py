@@ -1,8 +1,8 @@
 from flask import Flask, render_template, request, redirect
 import csv
 from password_checker import *
-#from hackernews_project import *
-#from bs4 import BeautifulSoup
+from hackernews_project import *
+from bs4 import BeautifulSoup
 app = Flask(__name__)
 
 @app.route('/')
@@ -55,22 +55,23 @@ def password_checker_demo():
                 </html>
             '''.format(result=result)
 
-#@app.route('/hackernews_demo', methods=['POST', 'GET'])
-#def hackernews_project_demo():
-#    if request.method =='POST' :
- #       res = requests.get('https://news.ycombinator.com/newest')
-#        soup = BeautifulSoup(res.text, 'html.parser')
-#        links = soup.select('.storylink')
-#        subtext = soup.select('.subtext')
-#        data = create_custom_hn(links,subtext)
-#   else :
- #       print('OOPS ! SOMETHING WENT WRONG, Try Again !!!')
- #   return '''
-  #              <html>
-   #                 <body>
-    #                    <h1>current news related to programming world are :</h1><br><br><p>{data}</p><br>
-     #                   <p><a href="/work2.html">Click here to go back.</a>
-      #                  <p><a href="/index.html">Click here to go homepage.</a>
-       #             </body>
-        #        </html>
-           # '''.format(data=data)
+@app.route('/hackernews_demo', methods=['POST', 'GET'])
+def hackernews_project_demo():
+    if request.method =='POST' :
+        res = requests.get('https://news.ycombinator.com/newest')
+        soup = BeautifulSoup(res.text, 'html.parser')
+        links = soup.select('.storylink')
+        subtext = soup.select('.subtext')
+        data = create_custom_hn(links,subtext)
+    else :
+        print('OOPS ! SOMETHING WENT WRONG, Try Again !!!')
+    return '''
+   
+                <html>
+                    <body>
+                        <h1>current news related to programming world are :</h1><br><br><p>{data}</p><br>
+                        <p><a href="/work2.html">Click here to go back.</a>
+                        <p><a href="/index.html">Click here to go homepage.</a>
+                    </body>
+                </html>
+            '''.format(data=data)
