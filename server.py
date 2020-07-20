@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect
 import csv
 from password_checker import *
-from hackernews_project import *
+#from hackernews_project import *
 from bs4 import BeautifulSoup
 app = Flask(__name__)
 
@@ -62,7 +62,7 @@ def hackernews_project_demo():
         soup = BeautifulSoup(res.text, 'html.parser')
         links = soup.select('.storylink')
         subtext = soup.select('.subtext')
-        data = create_custom_hn(links,subtext)
+        #data = create_custom_hn(links,subtext)
     else :
         print('OOPS ! SOMETHING WENT WRONG, Try Again !!!')
     return '''
