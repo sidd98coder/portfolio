@@ -1,6 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
-import pprint
+#import pprint
 
 res = requests.get('https://news.ycombinator.com/newest')
 soup = BeautifulSoup(res.text, 'html.parser')
